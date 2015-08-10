@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  MoreViewController.swift
 //  AppStudio
 //
 //  Created by SkyArrow on 2015/8/10.
@@ -8,45 +8,35 @@
 
 import UIKit
 import Alamofire
-import AlamofireObjectMapper
 import RealmSwift
 
-class LoginViewController: UIViewController {
+class MoreViewController: UIViewController {
     let realm = Realm()
     
-    @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
-    
-    @IBAction func btnLoginPressed(sender: UIButton) {
-        Alamofire.request(.POST, Constant.TOKEN_URL, parameters: [
-            "email": txtEmail.text,
-            "password": txtPassword.text
-        ])
+    @IBAction func btnLogoutPressed(sender: UIButton) {
+        let token = realm.objects(Token).first
+        let url = Constant.TOKEN_URL + token!.id
+        
+        Alamofire.request(.DELETE, url)
             .validate(statusCode: 200..<300)
-            .responseObject { (res: TokenResponse?, err: NSError?) in
+            .response {_, _, _, err in
                 if err != nil {
                     println(err)
                     return
                 }
                 
-                // Save the token to Realm
-                let token = Token()
-                token.id = res!.id!
-                token.userID = res!.userID!
-                token.createdAt = res!.createdAt!
-                token.updatedAt = res!.updatedAt!
-                
+                // Delete all objects in Realm
                 self.realm.write {
-                    self.realm.add(token)
+                    self.realm.deleteAll()
                 }
                 
-                // Go to the project list view
+                // Go to the login page
                 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 let window = delegate.window!
                 
                 UIView.transitionWithView(window, duration: 0.33, options: .CurveEaseOut, animations: {
                     let oldState = UIView.areAnimationsEnabled()
-                    let controller = self.storyboard?.instantiateInitialViewController() as! UINavigationController
+                    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("login") as! LoginViewController
                     
                     UIView.setAnimationsEnabled(false)
                     window.rootViewController = controller
@@ -57,9 +47,24 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

@@ -14,4 +14,5 @@ struct Constant {
     static let USER_URL = API_URL + "users/"
     
     static let DEFAULTS_TOKEN = "token"
+    static let DEFAULTS_USER_ID = "user_id"
 }

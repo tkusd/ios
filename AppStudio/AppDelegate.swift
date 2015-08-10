@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
+    let realm = Realm()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let token = realm.objects(Token)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var controller: UIViewController?
+        
+        if token.count == 0 {
+            controller = storyboard.instantiateViewControllerWithIdentifier("login") as! LoginViewController
+        } else {
+            controller = storyboard.instantiateInitialViewController() as! UINavigationController
+        }
+        
+        self.window!.rootViewController = controller
+        
         return true
     }
 
@@ -40,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

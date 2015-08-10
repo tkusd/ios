@@ -13,8 +13,12 @@
 		33ED21981B789139002E3711 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21961B789139002E3711 /* LaunchScreen.xib */; };
 		33ED21A41B789139002E3711 /* AppStudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21A31B789139002E3711 /* AppStudioTests.swift */; };
 		33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B11B78A1BA002E3711 /* Constant.swift */; };
-		33ED21B41B78A4BC002E3711 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */; };
 		33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B51B78A7BB002E3711 /* LoginViewController.swift */; };
+		33ED21BE1B78F44B002E3711 /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */; };
+		33ED21C01B78F52A002E3711 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21BF1B78F52A002E3711 /* MoreViewController.swift */; };
+		33ED21C31B78F92C002E3711 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C21B78F92C002E3711 /* TokenResponse.swift */; };
+		33ED21C71B790581002E3711 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C61B790581002E3711 /* APIResponse.swift */; };
+		33ED21C91B790760002E3711 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C81B790760002E3711 /* Token.swift */; };
 		FFDFA9E9310AF03B2C0B74EC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAF606E4EE4A115E78CA271 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,8 +44,12 @@
 		33ED21A31B789139002E3711 /* AppStudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStudioTests.swift; sourceTree = "<group>"; };
 		33ED21AF1B78A04F002E3711 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		33ED21B11B78A1BA002E3711 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		33ED21B51B78A7BB002E3711 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
+		33ED21BF1B78F52A002E3711 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		33ED21C21B78F92C002E3711 /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		33ED21C61B790581002E3711 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		33ED21C81B790760002E3711 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		495DD027FDFA106308B21700 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8EAF606E4EE4A115E78CA271 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC40A18736F7484E3894A06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,8 +99,10 @@
 			children = (
 				33ED218D1B789139002E3711 /* AppDelegate.swift */,
 				33ED21911B789139002E3711 /* Main.storyboard */,
+				33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */,
 				33ED21B51B78A7BB002E3711 /* LoginViewController.swift */,
-				33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */,
+				33ED21C11B78F913002E3711 /* model */,
+				33ED21BF1B78F52A002E3711 /* MoreViewController.swift */,
 				33ED21B11B78A1BA002E3711 /* Constant.swift */,
 				33ED21941B789139002E3711 /* Images.xcassets */,
 				33ED21961B789139002E3711 /* LaunchScreen.xib */,
@@ -124,6 +134,16 @@
 				33ED21A21B789139002E3711 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33ED21C11B78F913002E3711 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				33ED21C21B78F92C002E3711 /* TokenResponse.swift */,
+				33ED21C81B790760002E3711 /* Token.swift */,
+				33ED21C61B790581002E3711 /* APIResponse.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		663AE51DD6A8352BB98E4EFF /* Frameworks */ = {
@@ -295,10 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ED21C71B790581002E3711 /* APIResponse.swift in Sources */,
+				33ED21C01B78F52A002E3711 /* MoreViewController.swift in Sources */,
 				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
-				33ED21B41B78A4BC002E3711 /* ProjectListViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
+				33ED21C31B78F92C002E3711 /* TokenResponse.swift in Sources */,
+				33ED21BE1B78F44B002E3711 /* ProjectTableViewController.swift in Sources */,
 				33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */,
+				33ED21C91B790760002E3711 /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
