@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED218D1B789139002E3711 /* AppDelegate.swift */; };
-		33ED21901B789139002E3711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED218F1B789139002E3711 /* ViewController.swift */; };
 		33ED21931B789139002E3711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21911B789139002E3711 /* Main.storyboard */; };
 		33ED21951B789139002E3711 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21941B789139002E3711 /* Images.xcassets */; };
 		33ED21981B789139002E3711 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21961B789139002E3711 /* LaunchScreen.xib */; };
 		33ED21A41B789139002E3711 /* AppStudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21A31B789139002E3711 /* AppStudioTests.swift */; };
+		33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B11B78A1BA002E3711 /* Constant.swift */; };
+		33ED21B41B78A4BC002E3711 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */; };
+		33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21B51B78A7BB002E3711 /* LoginViewController.swift */; };
 		FFDFA9E9310AF03B2C0B74EC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAF606E4EE4A115E78CA271 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -30,13 +32,16 @@
 		33ED21881B789139002E3711 /* AppStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED218C1B789139002E3711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33ED218D1B789139002E3711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33ED218F1B789139002E3711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		33ED21921B789139002E3711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33ED21941B789139002E3711 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33ED21971B789139002E3711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		33ED219D1B789139002E3711 /* AppStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED21A21B789139002E3711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33ED21A31B789139002E3711 /* AppStudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStudioTests.swift; sourceTree = "<group>"; };
+		33ED21AF1B78A04F002E3711 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		33ED21B11B78A1BA002E3711 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
+		33ED21B51B78A7BB002E3711 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		495DD027FDFA106308B21700 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8EAF606E4EE4A115E78CA271 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC40A18736F7484E3894A06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				33ED218D1B789139002E3711 /* AppDelegate.swift */,
-				33ED218F1B789139002E3711 /* ViewController.swift */,
 				33ED21911B789139002E3711 /* Main.storyboard */,
+				33ED21B51B78A7BB002E3711 /* LoginViewController.swift */,
+				33ED21B31B78A4BC002E3711 /* ProjectListViewController.swift */,
+				33ED21B11B78A1BA002E3711 /* Constant.swift */,
 				33ED21941B789139002E3711 /* Images.xcassets */,
 				33ED21961B789139002E3711 /* LaunchScreen.xib */,
 				33ED218B1B789139002E3711 /* Supporting Files */,
@@ -122,6 +129,7 @@
 		663AE51DD6A8352BB98E4EFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33ED21AF1B78A04F002E3711 /* Alamofire.framework */,
 				8EAF606E4EE4A115E78CA271 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -287,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33ED21901B789139002E3711 /* ViewController.swift in Sources */,
+				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
+				33ED21B41B78A4BC002E3711 /* ProjectListViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
+				33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +428,10 @@
 			baseConfigurationReference = CEC40A18736F7484E3894A06 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = AppStudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +443,10 @@
 			baseConfigurationReference = 495DD027FDFA106308B21700 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = AppStudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

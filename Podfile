@@ -3,5 +3,4 @@ use_frameworks!
 
 xcodeproj 'AppStudio'
 
-pod 'SwiftyJSON', '~> 2.2'
-pod 'AFNetworking', '~> 2.5'
+pod 'Alamofire', '~> 1.3'
