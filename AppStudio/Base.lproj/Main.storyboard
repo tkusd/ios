@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Log in-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Log in" id="BYZ-38-t0r" customClass="ViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-3f-iJV">
+                                <rect key="frame" x="16" y="209" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-YT-SAw">
+                                <rect key="frame" x="16" y="247" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pX-RF-lAh">
+                                <rect key="frame" x="279" y="285" width="43" height="30"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9pX-RF-lAh" firstAttribute="top" secondItem="W9E-YT-SAw" secondAttribute="bottom" constant="8" id="9oU-kb-9gO"/>
+                            <constraint firstItem="rgm-3f-iJV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="B1U-4l-7JU"/>
+                            <constraint firstItem="rgm-3f-iJV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Bnf-Ul-OLB"/>
+                            <constraint firstItem="W9E-YT-SAw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GRf-fb-jUJ"/>
+                            <constraint firstItem="W9E-YT-SAw" firstAttribute="top" secondItem="rgm-3f-iJV" secondAttribute="bottom" constant="8" symbolic="YES" id="Is5-Et-6mK"/>
+                            <constraint firstItem="W9E-YT-SAw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SV4-T8-Bq8"/>
+                            <constraint firstAttribute="centerX" secondItem="9pX-RF-lAh" secondAttribute="centerX" id="afM-T2-d0G"/>
+                            <constraint firstAttribute="centerY" secondItem="9pX-RF-lAh" secondAttribute="centerY" id="bgO-gf-80E"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439" y="417"/>
         </scene>
     </scenes>
 </document>
