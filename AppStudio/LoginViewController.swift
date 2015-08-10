@@ -42,16 +42,8 @@ class LoginViewController: UIViewController {
                 
                 // Go to the project list view
                 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let window = delegate.window!
                 
-                UIView.transitionWithView(window, duration: 0.33, options: .CurveEaseOut, animations: {
-                    let oldState = UIView.areAnimationsEnabled()
-                    let controller = self.storyboard?.instantiateInitialViewController() as! UINavigationController
-                    
-                    UIView.setAnimationsEnabled(false)
-                    window.rootViewController = controller
-                    UIView.setAnimationsEnabled(oldState)
-                    }, completion: nil)
+                delegate.showLoginScreen(false)
         }
     }
     

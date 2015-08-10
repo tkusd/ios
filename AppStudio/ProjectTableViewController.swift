@@ -19,6 +19,10 @@ class ProjectTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBar.topItem!.title = "Projects"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

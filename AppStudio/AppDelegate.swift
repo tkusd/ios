@@ -17,18 +17,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let token = realm.objects(Token)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var controller: UIViewController?
         
-        if token.count == 0 {
+        self.showLoginScreen(token.count == 0, animated: false)
+        
+        return true
+    }
+    
+    func showLoginScreen(active: Bool, animated: Bool = true){
+        var controller: UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if (active){
             controller = storyboard.instantiateViewControllerWithIdentifier("login") as! LoginViewController
         } else {
             controller = storyboard.instantiateInitialViewController() as! UINavigationController
         }
         
-        self.window!.rootViewController = controller
+        self.window!.makeKeyAndVisible()
         
-        return true
+        if (animated) {
+            UIView.transitionWithView(self.window!, duration: 0.33, options: .CurveEaseOut | .TransitionCrossDissolve, animations: {
+                let oldState = UIView.areAnimationsEnabled()
+                
+                UIView.setAnimationsEnabled(false)
+                self.window!.rootViewController = controller
+                UIView.setAnimationsEnabled(oldState)
+                }, completion: nil)
+        } else {
+            self.window!.rootViewController = controller
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

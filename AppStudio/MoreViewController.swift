@@ -32,23 +32,18 @@ class MoreViewController: UIViewController {
                 
                 // Go to the login page
                 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let window = delegate.window!
                 
-                UIView.transitionWithView(window, duration: 0.33, options: .CurveEaseOut, animations: {
-                    let oldState = UIView.areAnimationsEnabled()
-                    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("login") as! LoginViewController
-                    
-                    UIView.setAnimationsEnabled(false)
-                    window.rootViewController = controller
-                    UIView.setAnimationsEnabled(oldState)
-                    }, completion: nil)
+                delegate.showLoginScreen(true)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBar.topItem!.title = "More"
     }
 
     override func didReceiveMemoryWarning() {
