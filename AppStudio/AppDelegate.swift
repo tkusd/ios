@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if (active){
-            controller = storyboard.instantiateViewControllerWithIdentifier("login") as! LoginViewController
+            controller = storyboard.instantiateViewControllerWithIdentifier("loginNav") as! LoginNavigationController
         } else {
             controller = storyboard.instantiateInitialViewController() as! UINavigationController
         }

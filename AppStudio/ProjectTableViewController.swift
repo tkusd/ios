@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import AlamofireObjectMapper
 
 class ProjectTableViewController: UITableViewController {
     var projectList: [ProjectResponse] = []
