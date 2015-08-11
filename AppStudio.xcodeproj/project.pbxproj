@@ -19,6 +19,8 @@
 		33ED21C31B78F92C002E3711 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C21B78F92C002E3711 /* TokenResponse.swift */; };
 		33ED21C71B790581002E3711 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C61B790581002E3711 /* APIResponse.swift */; };
 		33ED21C91B790760002E3711 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21C81B790760002E3711 /* Token.swift */; };
+		33ED21CB1B79FE50002E3711 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21CA1B79FE50002E3711 /* ProjectResponse.swift */; };
+		33ED21CD1B79FED8002E3711 /* ProjectListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED21CC1B79FED8002E3711 /* ProjectListResponse.swift */; };
 		FFDFA9E9310AF03B2C0B74EC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAF606E4EE4A115E78CA271 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		33ED21C21B78F92C002E3711 /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		33ED21C61B790581002E3711 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		33ED21C81B790760002E3711 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		33ED21CA1B79FE50002E3711 /* ProjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
+		33ED21CC1B79FED8002E3711 /* ProjectListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListResponse.swift; sourceTree = "<group>"; };
 		495DD027FDFA106308B21700 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8EAF606E4EE4A115E78CA271 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC40A18736F7484E3894A06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				33ED21C21B78F92C002E3711 /* TokenResponse.swift */,
 				33ED21C81B790760002E3711 /* Token.swift */,
 				33ED21C61B790581002E3711 /* APIResponse.swift */,
+				33ED21CA1B79FE50002E3711 /* ProjectResponse.swift */,
+				33ED21CC1B79FED8002E3711 /* ProjectListResponse.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -319,10 +325,12 @@
 				33ED21C01B78F52A002E3711 /* MoreViewController.swift in Sources */,
 				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
+				33ED21CD1B79FED8002E3711 /* ProjectListResponse.swift in Sources */,
 				33ED21C31B78F92C002E3711 /* TokenResponse.swift in Sources */,
 				33ED21BE1B78F44B002E3711 /* ProjectTableViewController.swift in Sources */,
 				33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */,
 				33ED21C91B790760002E3711 /* Token.swift in Sources */,
+				33ED21CB1B79FE50002E3711 /* ProjectResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
