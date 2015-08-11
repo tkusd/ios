@@ -107,6 +107,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IRe-HP-9Op" id="XmK-mz-t1n">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RnM-YZ-4zX" kind="show" identifier="ProjectPreviewSegue" id="NDc-ro-7bf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -119,6 +122,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7w-0a-coi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="693"/>
+        </scene>
+        <!--Preview-->
+        <scene sceneID="JJq-u6-awU">
+            <objects>
+                <viewController storyboardIdentifier="projectPreview" title="Preview" id="RnM-YZ-4zX" customClass="ProjectPreviewViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PwI-tK-tHo"/>
+                        <viewControllerLayoutGuide type="bottom" id="A4V-Hn-NWt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Mn-OE-jb8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jl-kY-BTf">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Jl-kY-BTf" firstAttribute="leading" secondItem="9Mn-OE-jb8" secondAttribute="leadingMargin" constant="-16" id="2ny-rd-bT8"/>
+                            <constraint firstItem="A4V-Hn-NWt" firstAttribute="top" secondItem="4Jl-kY-BTf" secondAttribute="bottom" id="Vee-ZV-EBU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Jl-kY-BTf" secondAttribute="trailing" constant="-16" id="jSL-P4-kuS"/>
+                            <constraint firstItem="4Jl-kY-BTf" firstAttribute="top" secondItem="PwI-tK-tHo" secondAttribute="bottom" id="oXY-2P-DeC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="4Jl-kY-BTf" id="y5X-Wd-fR4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugk-ER-NZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="693"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fmb-FB-e4Y">

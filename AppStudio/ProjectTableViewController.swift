@@ -12,6 +12,7 @@ import Alamofire
 
 class ProjectTableViewController: UITableViewController {
     var projectList: [ProjectResponse] = []
+    var selectedProjectID: String?
     let realm = Realm()
     
     override func viewDidLoad() {
@@ -52,12 +53,17 @@ class ProjectTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
-        cell.textLabel?.text = self.projectList[indexPath.row].title
+        cell.textLabel?.text = projectList[indexPath.row].title
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You select cell #\(indexPath.row)!")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ProjectPreviewSegue") {
+            let viewController = segue.destinationViewController as! ProjectPreviewViewController
+            let row = tableView.indexPathForSelectedRow()?.row
+            viewController.projectID = projectList[row!].id
+            
+        }
     }
 }
