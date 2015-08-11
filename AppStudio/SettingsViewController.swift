@@ -1,21 +1,26 @@
 //
-//  MoreViewController.swift
+//  SettingsViewController.swift
 //  AppStudio
 //
-//  Created by SkyArrow on 2015/8/10.
+//  Created by SkyArrow on 2015/8/11.
 //  Copyright (c) 2015年 tkusd. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 import RealmSwift
+import AlamofireObjectMapper
+import Kingfisher
 
-class MoreViewController: UIViewController {
+class SettingsViewController: UIViewController {
     let realm = Realm()
     
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+
     @IBAction func btnLogoutPressed(sender: UIButton) {
-        let token = realm.objects(Token).first
-        let url = Constant.TOKEN_URL + token!.id
+        let token = realm.objects(Token).first!
+        let url = Constant.TOKEN_URL + token.id
         
         Alamofire.request(.DELETE, url)
             .validate(statusCode: 200..<300)
@@ -35,31 +40,37 @@ class MoreViewController: UIViewController {
                 
                 delegate.showLoginScreen(true)
         }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let token = realm.objects(Token).first!
+        let url = Constant.USER_URL + token.userID
+        
+        Alamofire.request(.GET, url)
+            .validate(statusCode: 200..<300)
+            .responseObject {(res: UserResponse?, err: NSError?) in
+                if err != nil {
+                    println(err)
+                    return
+                }
+                
+                self.updateUserView(res!)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.navigationController?.navigationBar.topItem!.title = "More"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.navigationController?.navigationBar.topItem!.title = "Settings"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    */
-
+    
+    func updateUserView(user: UserResponse) {
+        nameLabel.text = user.name
+        avatarImage.kf_setImageWithURL(NSURL(string: user.avatar!)!)
+    }
 }

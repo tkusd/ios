@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1192" y="349"/>
         </scene>
-        <!--More-->
+        <!--Settings-->
         <scene sceneID="bTp-Jw-8Mo">
             <objects>
-                <viewController title="More" id="jx6-Dc-muu" customClass="MoreViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="jx6-Dc-muu" customClass="SettingsViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUq-8s-Utl"/>
                         <viewControllerLayoutGuide type="bottom" id="Si1-Ou-Lht"/>
@@ -190,27 +190,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Dy-X9-lGw">
+                                <rect key="frame" x="236" y="88" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="CpY-fB-rxg"/>
+                                    <constraint firstAttribute="width" constant="128" id="W83-XX-Tf5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfy-rl-KLp">
+                                <rect key="frame" x="280" y="224" width="41" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-4L-eBj">
+                                <rect key="frame" x="263" y="252" width="74" height="30"/>
+                                <state key="normal" title="Edit profile">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mpx-l6-ljl" kind="show" id="LPn-r7-9hj"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MS-i1-iWv">
-                                <rect key="frame" x="274" y="285" width="53" height="30"/>
+                                <rect key="frame" x="274" y="290" width="53" height="30"/>
                                 <state key="normal" title="Log out">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnLogoutPressed:" destination="jx6-Dc-muu" eventType="touchUpInside" id="u5f-TA-pIh"/>
+                                    <action selector="btnLogoutPressed:" destination="jx6-Dc-muu" eventType="touchUpInside" id="ryd-cx-0rt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rfy-rl-KLp" secondAttribute="centerX" id="7TZ-Q1-Lpc"/>
+                            <constraint firstItem="hTS-4L-eBj" firstAttribute="top" secondItem="Rfy-rl-KLp" secondAttribute="bottom" constant="8" id="7qx-Th-zTl"/>
+                            <constraint firstAttribute="centerX" secondItem="9Dy-X9-lGw" secondAttribute="centerX" id="97E-Vd-Rnp"/>
                             <constraint firstAttribute="centerX" secondItem="9MS-i1-iWv" secondAttribute="centerX" id="gMG-ZN-18U"/>
-                            <constraint firstAttribute="centerY" secondItem="9MS-i1-iWv" secondAttribute="centerY" id="wYp-38-15k"/>
+                            <constraint firstItem="9MS-i1-iWv" firstAttribute="top" secondItem="hTS-4L-eBj" secondAttribute="bottom" constant="8" id="vai-YI-nCw"/>
+                            <constraint firstItem="9Dy-X9-lGw" firstAttribute="top" secondItem="RUq-8s-Utl" secondAttribute="bottom" constant="24" id="x49-Vm-F7V"/>
+                            <constraint firstAttribute="centerX" secondItem="hTS-4L-eBj" secondAttribute="centerX" id="xTf-LP-xXX"/>
+                            <constraint firstItem="Rfy-rl-KLp" firstAttribute="top" secondItem="9Dy-X9-lGw" secondAttribute="bottom" constant="8" id="zNR-nE-LBC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="61V-pX-zH0"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="61V-pX-zH0"/>
+                    <connections>
+                        <outlet property="avatarImage" destination="9Dy-X9-lGw" id="25o-6v-c1R"/>
+                        <outlet property="nameLabel" destination="Rfy-rl-KLp" id="O0D-YE-AIL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1u-dr-lAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="1366"/>
+        </scene>
+        <!--Edit profile-->
+        <scene sceneID="s3n-Og-ciX">
+            <objects>
+                <viewController title="Edit profile" id="mpx-l6-ljl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vlw-pY-WgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJ7-7v-Qir"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gug-1B-wGg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgY-Ck-nGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="1366"/>
         </scene>
         <!--Projects-->
         <scene sceneID="a89-2R-tFD">
