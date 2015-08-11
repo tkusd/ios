@@ -181,7 +181,7 @@
         <!--Settings-->
         <scene sceneID="bTp-Jw-8Mo">
             <objects>
-                <viewController title="Settings" id="jx6-Dc-muu" customClass="SettingsViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settings" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jx6-Dc-muu" customClass="SettingsViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUq-8s-Utl"/>
                         <viewControllerLayoutGuide type="bottom" id="Si1-Ou-Lht"/>
@@ -209,7 +209,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mpx-l6-ljl" kind="show" id="LPn-r7-9hj"/>
+                                    <segue destination="mpx-l6-ljl" kind="show" identifier="ProfileEditSegue" id="LPn-r7-9hj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MS-i1-iWv">
@@ -247,7 +247,7 @@
         <!--Edit profile-->
         <scene sceneID="s3n-Og-ciX">
             <objects>
-                <viewController title="Edit profile" id="mpx-l6-ljl" sceneMemberID="viewController">
+                <viewController title="Edit profile" id="mpx-l6-ljl" customClass="ProfileEditViewController" customModule="AppStudio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vlw-pY-WgS"/>
                         <viewControllerLayoutGuide type="bottom" id="QJ7-7v-Qir"/>
@@ -255,8 +255,67 @@
                     <view key="view" contentMode="scaleToFill" id="gug-1B-wGg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="snc-BY-qfH">
+                                <rect key="frame" x="16" y="138" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrU-5e-nMS">
+                                <rect key="frame" x="16" y="72" width="48" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQi-4h-T7T">
+                                <rect key="frame" x="16" y="184" width="132" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J15-FN-obU">
+                                <rect key="frame" x="16" y="212" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5PK-b1-sr3">
+                                <rect key="frame" x="16" y="250" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aaj-wN-yAH">
+                                <rect key="frame" x="16" y="100" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cQi-4h-T7T" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="5qR-GC-hIr"/>
+                            <constraint firstItem="cQi-4h-T7T" firstAttribute="top" secondItem="snc-BY-qfH" secondAttribute="bottom" constant="16" id="AQ9-1f-zhZ"/>
+                            <constraint firstItem="snc-BY-qfH" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="E3C-qW-6Np"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aaj-wN-yAH" secondAttribute="trailing" id="Fce-LO-eyr"/>
+                            <constraint firstItem="Aaj-wN-yAH" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="JRx-Cq-GSi"/>
+                            <constraint firstItem="snc-BY-qfH" firstAttribute="top" secondItem="Aaj-wN-yAH" secondAttribute="bottom" constant="8" id="U5N-YC-ui7"/>
+                            <constraint firstItem="cQi-4h-T7T" firstAttribute="top" secondItem="snc-BY-qfH" secondAttribute="bottom" constant="16" id="Un2-LQ-YJM"/>
+                            <constraint firstItem="J15-FN-obU" firstAttribute="top" secondItem="cQi-4h-T7T" secondAttribute="bottom" constant="8" id="V7a-aa-Spz"/>
+                            <constraint firstItem="ZrU-5e-nMS" firstAttribute="top" secondItem="Vlw-pY-WgS" secondAttribute="bottom" constant="8" id="Wia-zg-D4m"/>
+                            <constraint firstItem="ZrU-5e-nMS" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="ZsO-oP-Aqq"/>
+                            <constraint firstItem="5PK-b1-sr3" firstAttribute="trailing" secondItem="gug-1B-wGg" secondAttribute="trailingMargin" id="hfF-sy-naX"/>
+                            <constraint firstItem="J15-FN-obU" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="jqF-XH-Y1X"/>
+                            <constraint firstItem="Aaj-wN-yAH" firstAttribute="top" secondItem="ZrU-5e-nMS" secondAttribute="bottom" constant="8" id="nCY-R9-GOm"/>
+                            <constraint firstItem="5PK-b1-sr3" firstAttribute="leading" secondItem="gug-1B-wGg" secondAttribute="leadingMargin" id="ooJ-Nr-P1v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J15-FN-obU" secondAttribute="trailing" id="qsr-N9-dMw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="snc-BY-qfH" secondAttribute="trailing" id="sFK-hi-zYE"/>
+                            <constraint firstItem="5PK-b1-sr3" firstAttribute="top" secondItem="J15-FN-obU" secondAttribute="bottom" constant="8" id="tFh-oX-T5x"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="snc-BY-qfH" id="zJx-41-VNY"/>
+                        <outlet property="txtName" destination="Aaj-wN-yAH" id="ayo-BW-SHS"/>
+                        <outlet property="txtNewPassword" destination="5PK-b1-sr3" id="gEh-Vd-vTs"/>
+                        <outlet property="txtOldPassword" destination="J15-FN-obU" id="apK-3u-9xD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgY-Ck-nGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

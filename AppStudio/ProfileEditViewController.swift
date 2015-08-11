@@ -7,29 +7,66 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
+import RealmSwift
+
+protocol ProfileEditViewDelegate {
+    func userUpdateResponse(UserResponse?)
+}
 
 class ProfileEditViewController: UIViewController {
-
+    let realm = Realm()
+    var user: UserResponse?
+    var delegate: ProfileEditViewDelegate?
+    
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtOldPassword: UITextField!
+    @IBOutlet weak var txtNewPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Set the value of text fields
+        txtName.text = user?.name
+        txtEmail.text = user?.email
+        
+        // Add the right button on the navigation bar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "updateUser:")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    internal func updateUser(sender: UIButton) {
+        let token = realm.objects(Token).first!
+        var data = [
+            "name": txtName.text,
+            "email": txtEmail.text
+        ]
+        
+        if !txtOldPassword.text.isEmpty && !txtNewPassword.text.isEmpty {
+            data["old_password"] = txtOldPassword.text
+            data["password"] = txtNewPassword.text
+        }
+        
+        Alamofire.request(.PUT, Constant.USER_URL + token.userID, parameters: data, headers: [
+            "Authorization": "Bearer " + token.id
+            ])
+            .validate(statusCode: 200..<300)
+            .responseObject {(res: UserResponse?, err: NSError?) in
+                if err != nil {
+                    println(err)
+                    return
+                }
+                
+                if self.delegate != nil {
+                    self.delegate?.userUpdateResponse(res)
+                }
+                
+                self.navigationController?.popViewControllerAnimated(true)
+        }
     }
-    */
-
 }

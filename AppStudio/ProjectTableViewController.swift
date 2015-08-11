@@ -39,7 +39,7 @@ class ProjectTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.navigationController?.navigationBar.topItem!.title = "Projects"
+        self.navigationController?.navigationBar.topItem!.title = self.title
     }
 
     override func didReceiveMemoryWarning() {

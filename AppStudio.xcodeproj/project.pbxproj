@@ -11,6 +11,7 @@
 		3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382772E1B7A0AB300986831 /* UserResponse.swift */; };
 		338277311B7A0CAA00986831 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277301B7A0CAA00986831 /* LoginNavigationController.swift */; };
 		338277351B7A199500986831 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277341B7A199500986831 /* SettingsViewController.swift */; };
+		338277371B7A1AF900986831 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277361B7A1AF900986831 /* ProfileEditViewController.swift */; };
 		33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED218D1B789139002E3711 /* AppDelegate.swift */; };
 		33ED21931B789139002E3711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21911B789139002E3711 /* Main.storyboard */; };
 		33ED21951B789139002E3711 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ED21941B789139002E3711 /* Images.xcassets */; };
@@ -43,6 +44,9 @@
 		3382772E1B7A0AB300986831 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		338277301B7A0CAA00986831 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		338277341B7A199500986831 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		338277361B7A1AF900986831 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		338277381B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		338277391B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		33ED21881B789139002E3711 /* AppStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED218C1B789139002E3711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33ED218D1B789139002E3711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				33ED21911B789139002E3711 /* Main.storyboard */,
 				338277301B7A0CAA00986831 /* LoginNavigationController.swift */,
 				3382772C1B7A0A0900986831 /* SignupViewController.swift */,
+				338277361B7A1AF900986831 /* ProfileEditViewController.swift */,
 				33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */,
 				33ED21CE1B7A0251002E3711 /* ProjectPreviewViewController.swift */,
 				33ED21B51B78A7BB002E3711 /* LoginViewController.swift */,
@@ -334,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33ED21C71B790581002E3711 /* APIResponse.swift in Sources */,
+				338277371B7A1AF900986831 /* ProfileEditViewController.swift in Sources */,
 				3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */,
 				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
@@ -373,6 +379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				33ED21921B789139002E3711 /* Base */,
+				338277381B7A398400986831 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				33ED21971B789139002E3711 /* Base */,
+				338277391B7A398400986831 /* zh-Hant */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

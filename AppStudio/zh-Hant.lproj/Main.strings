@@ -1,0 +1,66 @@
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "0bf-MC-Iwl"; */
+"0bf-MC-Iwl.placeholder" = "電子信箱";
+
+/* Class = "UILabel"; text = "Already have an account?"; ObjectID = "4qT-cv-78I"; */
+"4qT-cv-78I.text" = "已經有帳號了嗎？";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "4rR-YD-uK5"; */
+"4rR-YD-uK5.placeholder" = "密碼";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "5lr-EW-nen"; */
+"5lr-EW-nen.text" = "還沒有帳號嗎？";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "61V-pX-zH0"; */
+"61V-pX-zH0.title" = "設定";
+
+/* Class = "UITabBarItem"; title = "Projects"; ObjectID = "8sD-88-2et"; */
+"8sD-88-2et.title" = "專案";
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "8yB-uP-vDr"; */
+"8yB-uP-vDr.normalTitle" = "登入";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "9MS-i1-iWv"; */
+"9MS-i1-iWv.normalTitle" = "登出";
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "9pX-RF-lAh"; */
+"9pX-RF-lAh.normalTitle" = "登入";
+
+/* Class = "UIViewController"; title = "Log in"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "登入";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "Bwv-2O-0E4"; */
+"Bwv-2O-0E4.placeholder" = "姓名";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Rfy-rl-KLp"; */
+"Rfy-rl-KLp.text" = "Label";
+
+/* Class = "UIViewController"; title = "Preview"; ObjectID = "RnM-YZ-4zX"; */
+"RnM-YZ-4zX.title" = "預覽";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "W9E-YT-SAw"; */
+"W9E-YT-SAw.placeholder" = "密碼";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "gGn-Pl-pXZ"; */
+"gGn-Pl-pXZ.normalTitle" = "註冊";
+
+/* Class = "UIButton"; normalTitle = "Edit profile"; ObjectID = "hTS-4L-eBj"; */
+"hTS-4L-eBj.normalTitle" = "編輯個人資料";
+
+/* Class = "UIViewController"; title = "Sign up"; ObjectID = "iGp-Wh-Z27"; */
+"iGp-Wh-Z27.title" = "註冊";
+
+/* Class = "UITableViewController"; title = "Projects"; ObjectID = "iH6-w3-ReC"; */
+"iH6-w3-ReC.title" = "專案";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "jx6-Dc-muu"; */
+"jx6-Dc-muu.title" = "設定";
+
+/* Class = "UIViewController"; title = "Edit profile"; ObjectID = "mpx-l6-ljl"; */
+"mpx-l6-ljl.title" = "編輯個人資料";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "rgm-3f-iJV"; */
+"rgm-3f-iJV.placeholder" = "電子信箱";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "uW8-Ze-4Qw"; */
+"uW8-Ze-4Qw.normalTitle" = "註冊";

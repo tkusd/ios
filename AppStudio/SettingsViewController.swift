@@ -12,8 +12,9 @@ import RealmSwift
 import AlamofireObjectMapper
 import Kingfisher
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, ProfileEditViewDelegate {
     let realm = Realm()
+    var user: UserResponse?
     
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -49,7 +50,9 @@ class SettingsViewController: UIViewController {
         let token = realm.objects(Token).first!
         let url = Constant.USER_URL + token.userID
         
-        Alamofire.request(.GET, url)
+        Alamofire.request(.GET, url, headers: [
+            "Authorization": "Bearer " + token.id
+            ])
             .validate(statusCode: 200..<300)
             .responseObject {(res: UserResponse?, err: NSError?) in
                 if err != nil {
@@ -57,20 +60,34 @@ class SettingsViewController: UIViewController {
                     return
                 }
                 
-                self.updateUserView(res!)
+                self.user = res
+                self.updateUserView()
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.navigationController?.navigationBar.topItem!.title = "Settings"
+        self.navigationController?.navigationBar.topItem!.title = self.title
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func updateUserView(user: UserResponse) {
-        nameLabel.text = user.name
-        avatarImage.kf_setImageWithURL(NSURL(string: user.avatar!)!)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ProfileEditSegue" {
+            var controller = segue.destinationViewController as! ProfileEditViewController
+            controller.user = user
+            controller.delegate = self
+        }
+    }
+    
+    func updateUserView() {
+        nameLabel.text = user!.name
+        avatarImage.kf_setImageWithURL(NSURL(string: user!.avatar!)!)
+    }
+    
+    func userUpdateResponse(res: UserResponse?) {
+        self.user = res
+        self.updateUserView()
     }
 }
