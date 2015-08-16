@@ -16,6 +16,24 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    @IBAction func validate(sender: UIButton) {
+        if self.txtName.validateName(){
+           if self.txtEmail.validateEmail() {
+              if self.txtPassword.validatePassword() {
+                    self.alert("login success")
+                }
+                else{
+                    self.alert("invalid password")}
+            }
+            else {
+                self.alert("invalid email")
+            }
+        }
+        else {
+            self.alert("column have to type")
+        }
+    }
+    
     @IBAction func btnSignupPressed(sender: UIButton) {
         let name = txtName.text
         let email = txtEmail.text
@@ -29,6 +47,12 @@ class SignupViewController: UIViewController {
             .validate(statusCode: 200..<300)
             .responseObject {(res: UserResponse?, err: NSError?) in
                 if err != nil {
+                    var code:Int?
+                    code=res?.code
+                    println(code)
+                    if(code==1301){
+                        self.alert("email has been used")
+                    }
                     println(err)
                     return
                 }
@@ -49,4 +73,11 @@ class SignupViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func alert(message: String) {
+        let alc = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        alc.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alc, animated: true, completion: nil)
+    }
+
 }
