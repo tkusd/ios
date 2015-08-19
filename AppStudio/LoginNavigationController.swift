@@ -13,9 +13,10 @@ import AlamofireObjectMapper
 
 class LoginNavigationController: UINavigationController {
     let realm = Realm()
-    var container: UIView = UIView()
-    var loadingView: UIView = UIView()
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    var messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    var strLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class LoginNavigationController: UINavigationController {
     }
     
     func createToken(email: String, password: String) {
+        progressBar("loading", true)
         Alamofire.request(.POST, Constant.TOKEN_URL, parameters: [
             "email": email,
             "password": password
@@ -33,6 +35,7 @@ class LoginNavigationController: UINavigationController {
             .validate(statusCode: 200..<300)
             .responseObject { (res: TokenResponse?, err: NSError?) in
                 if err != nil {
+                    self.hideProgressBar()
                     var code:Int?
                     code=res?.code
                     println(code)
@@ -55,7 +58,7 @@ class LoginNavigationController: UINavigationController {
                     println(err)
                     return
                 }
-                self.showActivityIndicator(self.loadingView)
+                
                 // Save the token to Realm
                 let token = Token()
                 token.id = res!.id!
@@ -69,11 +72,30 @@ class LoginNavigationController: UINavigationController {
                 }
                 
                 // Go to the project list view
-                self.hideActivityIndicator(self.loadingView)
+                self.hideProgressBar()
                 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
                 delegate.showLoginScreen(false)
         }
+    }
+    
+    func progressBar(msg:String, _ indicator:Bool ) {
+        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
+        strLabel.text = msg
+        strLabel.textColor = UIColor.whiteColor()
+        messageFrame = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25 , width: 180, height: 50))
+        messageFrame.layer.cornerRadius = 15
+        messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        if indicator {
+            activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.startAnimating()
+            messageFrame.addSubview(activityIndicator)
+        }
+        messageFrame.addSubview(strLabel)
+        view.addSubview(messageFrame)
+    }
+    func hideProgressBar(){
+       messageFrame.hidden=true
     }
     
     func alert(message: String) {
@@ -82,56 +104,7 @@ class LoginNavigationController: UINavigationController {
         self.presentViewController(alc, animated: true, completion: nil)
     }
 
-    /*
-    Show customized activity indicator,
-    actually add activity indicator to passing view
     
-    @param uiView - add activity indicator to this view
-    */
-    func showActivityIndicator(uiView: UIView) {
-        container.frame = uiView.frame
-        container.center = uiView.center
-        container.backgroundColor = UIColorFromHex(0xffffff, alpha: 0.3)
-        
-        loadingView.frame = CGRectMake(0, 0, 80, 80)
-        loadingView.center = uiView.center
-        loadingView.backgroundColor = UIColorFromHex(0x444444, alpha: 0.7)
-        loadingView.clipsToBounds = true
-        loadingView.layer.cornerRadius = 10
-        
-        activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        activityIndicator.center = CGPointMake(loadingView.frame.size.width / 2, loadingView.frame.size.height / 2);
-        
-        loadingView.addSubview(activityIndicator)
-        container.addSubview(loadingView)
-        uiView.addSubview(container)
-        activityIndicator.startAnimating()
-    }
-    
-    /*
-    Hide activity indicator
-    Actually remove activity indicator from its super view
-    
-    @param uiView - remove activity indicator from this view
-    */
-    func hideActivityIndicator(uiView: UIView) {
-        activityIndicator.stopAnimating()
-        container.removeFromSuperview()
-    }
-    
-    /*
-    Define UIColor from hex value
-    
-    @param rgbValue - hex color value
-    @param alpha - transparency level
-    */
-    func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
-        let blue = CGFloat(rgbValue & 0xFF)/256.0
-        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
-    }
     
     
 }
