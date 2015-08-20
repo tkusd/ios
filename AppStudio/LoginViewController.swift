@@ -13,11 +13,32 @@ import UIKit
 class LoginViewController: UIViewController{
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+
+    @IBAction func validateEmail(sender: AnyObject, forEvent event: UIEvent) {
+        if !validateEmail(txtEmail.text){
+            lblEmail.text="invalid email"
+            return
+        }
+    }
     
-    var passwordLength:Int?
+    @IBAction func validateEmailfinished(sender: AnyObject, forEvent event: UIEvent) {
+    }
     
+   
+    @IBAction func validatePassword(sender: AnyObject, forEvent event: UIEvent) {
+        if !validatePassword(){
+            lblPassword.text="length must be 6 to 50"
+            return
+        }
+    }
+    
+    @IBAction func validatePasswordfinished(sender: AnyObject, forEvent event: UIEvent) {
+       lblPassword.text=""
+    }
+   
     @IBAction func btnLoginPressed(sender: UIButton) {
-        validate()
         let navController = self.navigationController as! LoginNavigationController
         navController.createToken(txtEmail.text, password: txtPassword.text)
         
@@ -25,6 +46,8 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblEmail.text="email is required"
+        lblPassword.text="password is required"
         
     }
 
@@ -32,32 +55,16 @@ class LoginViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
     
-    func validate(){
-        if validateEmail()==false{
-            self.alert("invalid email")
-            return
-        }
-        if validatePassword()==false{
-            self.alert("length less than 6")
-            return
-        }
-    }
-    
-    func validateEmail() -> Bool {
-        var Result=false
+    func validateEmail(candidate: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        if txtEmail==emailRegex{
-           Result=true
-        }
-        return Result
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(candidate)
     }
     
     func validatePassword()->Bool{
         var Result=false
+        var passwordLength:Int?
         passwordLength=count(txtPassword.text!)
-        println(passwordLength)
-        if passwordLength > 6 {
+        if passwordLength > 6 && passwordLength<50 {
            Result=true
         }
         return Result
