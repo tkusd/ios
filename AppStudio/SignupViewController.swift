@@ -16,29 +16,15 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    var passwordLength:Int?
+    var nameLength:Int?
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
     
-    @IBAction func validate(sender: UIButton) {
-//        if self.txtName.validateName(){
-//           if self.txtEmail.validateEmail() {
-//              if self.txtPassword.validatePassword() {
-//                    self.alert("login success")
-//                }
-//                else{
-//                    self.alert("invalid password")}
-//            }
-//            else {
-//                self.alert("invalid email")
-//            }
-//        }
-//        else {
-//            self.alert("column have to type")
-//        }
-    }
     
     @IBAction func btnSignupPressed(sender: UIButton) {
+        
         let name = txtName.text
         let email = txtEmail.text
         let password = txtPassword.text
@@ -78,6 +64,51 @@ class SignupViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func validate(){
+        if validateName()==false{
+            self.alert("less than 3 to 100")
+            return
+        }
+        
+        if validateEmail()==false{
+            self.alert("invalid email")
+            return
+        }
+        if validatePassword()==false{
+            self.alert("less than 6 to 50")
+            return
+        }
+    }
+    
+    func validateName()->Bool{
+       var Result=false
+       nameLength=count(txtName.text!)
+        if nameLength>3 && nameLength<100{
+           Result=true
+        }
+        return Result
+    }
+    
+    func validateEmail() -> Bool {
+        var Result=false
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if txtEmail==emailRegex{
+            Result=true
+        }
+        return Result
+    }
+    
+    func validatePassword()->Bool{
+        var Result=false
+        passwordLength=count(txtPassword.text!)
+        if passwordLength > 6 && passwordLength<50 {
+            Result=true
+        }
+        return Result
+    }
+
     
     func progressBar(msg:String, _ indicator:Bool ) {
         strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))

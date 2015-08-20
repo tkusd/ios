@@ -14,22 +14,10 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
-    
     var passwordLength:Int?
-       @IBAction func validate(sender: AnyObject) {
-        if validateEmail()==false {
-            
-            self.alert("invalid email")
-            return
-        }
-        if validatePassword()==false{
-            self.alert("length less than 6")
-            return
-        }
-     
-    }
-
+    
     @IBAction func btnLoginPressed(sender: UIButton) {
+        validate()
         let navController = self.navigationController as! LoginNavigationController
         navController.createToken(txtEmail.text, password: txtPassword.text)
         
@@ -43,18 +31,32 @@ class LoginViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func validate(){
+        if validateEmail()==false{
+            self.alert("invalid email")
+            return
+        }
+        if validatePassword()==false{
+            self.alert("length less than 6")
+            return
+        }
+    }
+    
     func validateEmail() -> Bool {
         var Result=false
-        var Rule="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        if txtEmail.text != Rule {
-            Result=true
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if txtEmail==emailRegex{
+           Result=true
         }
         return Result
     }
+    
     func validatePassword()->Bool{
         var Result=false
-        passwordLength=count(txtPassword.text.utf16)
+        passwordLength=count(txtPassword.text!)
+        println(passwordLength)
         if passwordLength > 6 {
            Result=true
         }
