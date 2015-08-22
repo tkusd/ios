@@ -23,37 +23,55 @@ class SignupViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
     
-    @IBAction func validateName(sender: AnyObject, forEvent event: UIEvent) {
+    @IBAction func checkName(sender: AnyObject, forEvent event: UIEvent) {
+        if count(txtName.text)==0{
+           lblName.text="name is required"
+           return
+        }
         if !validateName(){
-           lblName.text="less than 3 to 100"
+            lblName.text="less than 3 to 100"
+            return
+        }
+        if validateName(){
+           lblName.text=""
+            return
         }
     }
-    @IBAction func validateNamefinished(sender: AnyObject, forEvent event: UIEvent) {
-        lblName.text=""
-    }
     
-    @IBAction func validateEmail(sender: AnyObject, forEvent event: UIEvent) {
+    @IBAction func checkEmail(sender: AnyObject, forEvent event: UIEvent) {
+        if count(txtEmail.text)==0{
+            lblEmail.text="email is required"
+            return
+        }
         if !validateEmail(txtEmail.text){
             lblEmail.text="invalid email"
             return
         }
-    }
-    @IBAction func validateEmailfinished(sender: AnyObject, forEvent event: UIEvent) {
-        lblEmail.text=""
+        if validateEmail(txtEmail.text){
+            lblEmail.text=""
+            return
+        }
+
     }
     
-    @IBAction func validatePassword(sender: AnyObject, forEvent event: UIEvent) {
+    @IBAction func checkPassword(sender: AnyObject, forEvent event: UIEvent) {
+        if count(txtPassword.text)==0{
+            lblPassword.text="password is required"
+            return
+        }
         if !validatePassword(){
             lblPassword.text="length must be 6 to 50"
             return
         }
-    }
-    
-    @IBAction func validatePasswordfinished(sender: AnyObject, forEvent event: UIEvent) {
-        lblPassword.text=""
+        if validatePassword(){
+            lblPassword.text=""
+            return
+        }
+
     }
     
     @IBAction func btnSignupPressed(sender: UIButton) {
+        if validate(){
         let name = txtName.text
         let email = txtEmail.text
         let password = txtPassword.text
@@ -79,6 +97,10 @@ class SignupViewController: UIViewController {
                 let navController = self.navigationController as! LoginNavigationController
                 navController.createToken(email, password: password)
                 self.hideProgressBar()
+            }
+        }
+        else{
+           self.alert("check your data")
         }
     }
     
@@ -88,13 +110,17 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblName.text="name is required"
-        lblEmail.text="email is required"
-        lblPassword.text="password is required"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    func validate()->Bool{
+        var Result=false
+        if validateName() && validateEmail(txtEmail.text) && validatePassword() {
+            Result=true
+        }
+        return Result
     }
     
     func validateName()->Bool{

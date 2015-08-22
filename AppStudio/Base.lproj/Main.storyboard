@@ -38,8 +38,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="validateEmail:forEvent:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="mL9-Xs-NpU"/>
-                                    <action selector="validateEmailfinished:forEvent:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="FVT-qb-IqL"/>
+                                    <action selector="checkEmail:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="LMB-ZC-1HS"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-YT-SAw">
@@ -89,8 +88,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="validatePassword:forEvent:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="gfi-jK-coj"/>
-                                    <action selector="validatePasswordfinished:forEvent:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="uJt-gS-wc8"/>
+                                    <action selector="checkPassword:forEvent:" destination="BYZ-38-t0r" eventType="editingChanged" id="SSA-qZ-UtB"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uW8-Ze-4Qw">
@@ -308,8 +306,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="validateName:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidBegin" id="Xox-K0-EPP"/>
-                                    <action selector="validateNamefinished:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidEnd" id="meW-db-bFi"/>
+                                    <action selector="checkName:forEvent:" destination="iGp-Wh-Z27" eventType="editingChanged" id="1cS-Pt-h3O"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bf-MC-Iwl">
@@ -317,8 +314,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
-                                    <action selector="validateEmail:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidBegin" id="lHy-i0-sSr"/>
-                                    <action selector="validateEmailfinished:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidEnd" id="AQP-V9-cIx"/>
+                                    <action selector="checkEmail:forEvent:" destination="iGp-Wh-Z27" eventType="editingChanged" id="g9W-WM-g3k"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-Pl-pXZ">
@@ -345,8 +341,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="validatePassword:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidBegin" id="72G-DE-4sV"/>
-                                    <action selector="validatePasswordfinished:forEvent:" destination="iGp-Wh-Z27" eventType="editingDidEnd" id="0n6-cI-9CI"/>
+                                    <action selector="checkPassword:forEvent:" destination="iGp-Wh-Z27" eventType="editingChanged" id="f5Y-Hx-Zf0"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qT-cv-78I">
