@@ -29,7 +29,7 @@ class SignupViewController: UIViewController {
            return
         }
         if !validateName(){
-            lblName.text="less than 3 to 100"
+            lblName.text="less than 1 to 100"
             return
         }
         if validateName(){
@@ -127,7 +127,7 @@ class SignupViewController: UIViewController {
        var Result=false
        var nameLength:Int?
        nameLength=count(txtName.text!)
-        if nameLength>3 && nameLength<100{
+        if nameLength>0 && nameLength<=100{
            Result=true
         }
         return Result
@@ -142,7 +142,7 @@ class SignupViewController: UIViewController {
         var Result=false
         var passwordLength:Int?
         passwordLength=count(txtPassword.text!)
-        if passwordLength > 6 && passwordLength<50 {
+        if passwordLength >= 6 && passwordLength<=50 {
             Result=true
         }
         return Result

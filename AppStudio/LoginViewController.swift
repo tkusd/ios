@@ -82,7 +82,7 @@ class LoginViewController: UIViewController{
         var Result=false
         var passwordLength:Int?
         passwordLength=count(txtPassword.text!)
-        if passwordLength > 6 && passwordLength<50 {
+        if passwordLength >= 6 && passwordLength<=50 {
            Result=true
         }
         return Result
