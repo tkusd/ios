@@ -61,10 +61,10 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         gradientLayer.frame = self.view.bounds
-        let color1 = UIColor(red: 22/255, green: 81/255, blue: 135/255, alpha: 1.0).CGColor
-        let color2 = UIColor(red: 97/225, green:215/255 , blue:255/255 , alpha: 1.0).CGColor
+        let color1 = UIColor(red: 2/225, green:136/255 , blue:209/255 , alpha: 1.0).CGColor
+        let color2 = UIColor(red: 128/225, green:232/255 , blue:248/255 , alpha: 1.0).CGColor
         gradientLayer.colors = [color1,color2]
-        gradientLayer.locations = [0.35,1.0]
+        gradientLayer.locations = [0.15,1.0]
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
 
     }
