@@ -22,6 +22,7 @@ class SignupViewController: UIViewController {
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
+    let gradientLayer = CAGradientLayer()
     
     @IBAction func checkName(sender: AnyObject, forEvent event: UIEvent) {
         if count(txtName.text)==0{
@@ -110,6 +111,12 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gradientLayer.frame = self.view.bounds
+        let color1 = UIColor(red: 22/255, green: 81/255, blue: 135/255, alpha: 1.0).CGColor
+        let color2 = UIColor(red: 97/225, green:215/255 , blue:255/255 , alpha: 1.0).CGColor
+        gradientLayer.colors = [color1,color2]
+        gradientLayer.locations = [0.35,1.0]
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
     override func didReceiveMemoryWarning() {

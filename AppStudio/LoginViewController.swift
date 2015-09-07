@@ -15,6 +15,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
+    let gradientLayer = CAGradientLayer()
 
     @IBAction func checkEmail(sender: AnyObject, forEvent event: UIEvent) {
         if count(txtEmail.text)==0{
@@ -59,7 +60,14 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           }
+        gradientLayer.frame = self.view.bounds
+        let color1 = UIColor(red: 2/225, green:136/255 , blue:209/255 , alpha: 1.0).CGColor
+        let color2 = UIColor(red: 128/225, green:232/255 , blue:248/255 , alpha: 1.0).CGColor
+        gradientLayer.colors = [color1,color2]
+        gradientLayer.locations = [0.15,1.0]
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
