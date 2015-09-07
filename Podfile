@@ -1,10 +1,11 @@
 platform :ios, '8.0'
 use_frameworks!
 
-xcodeproj 'AppStudio'
+xcodeproj 'Diff'
 
 pod 'Alamofire', '~> 1.3'
 pod 'ObjectMapper', '~> 0.14'
 pod 'AlamofireObjectMapper', '~> 0.7'
 pod 'RealmSwift', '~> 0.94'
 pod 'Kingfisher', '~> 1.4'
+pod 'SwiftForms'
