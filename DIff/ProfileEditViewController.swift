@@ -52,7 +52,7 @@ class ProfileEditViewController: UIViewController {
             data["password"] = txtNewPassword.text
         }
         
-        Alamofire.request(.PUT, Constant.USER_URL + token.userID, parameters: data, headers: [
+        Alamofire.request(.PUT, Constant.USERS_URL + "/" + token.userID, parameters: data, headers: [
             "Authorization": "Bearer " + token.id
             ])
             .validate(statusCode: 200..<300)

@@ -14,15 +14,19 @@ import AlamofireObjectMapper
 class LoginNavigationController: UINavigationController {
     let realm = Realm()
     
-    func createToken(email: String, password: String) {
-        Alamofire.request(.POST, Constant.TOKEN_URL, parameters: [
+    func createToken(email: String, password: String){
+        createToken(email, password: password, delegate: nil)
+    }
+    
+    func createToken(email: String, password: String, delegate: LoginRequestDelegate?) {
+        Alamofire.request(.POST, Constant.TOKENS_URL, parameters: [
             "email": email,
             "password": password
             ])
             .validate(statusCode: 200..<300)
             .responseObject { (res: TokenResponse?, err: NSError?) in
                 if err != nil {
-                    println(err)
+                    delegate?.loginError(res, err: err)
                     return
                 }
                 
@@ -37,9 +41,16 @@ class LoginNavigationController: UINavigationController {
                     self.realm.add(token)
                 }
                 
+                delegate?.loginSuccess(res)
+                
                 // Go to the project list view
-                let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                delegate.showLoginScreen(false)
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.showLoginScreen(false)
         }
     }
+}
+
+protocol LoginRequestDelegate {
+    func loginSuccess(res: TokenResponse?)
+    func loginError(res: TokenResponse?, err: NSError?)
 }

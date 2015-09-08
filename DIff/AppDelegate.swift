@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = realm.objects(Token)
         
         self.showLoginScreen(token.count == 0, animated: false)
+        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
         return true
     }

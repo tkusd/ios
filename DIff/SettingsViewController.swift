@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController, ProfileEditViewDelegate {
 
     @IBAction func btnLogoutPressed(sender: UIButton) {
         let token = realm.objects(Token).first!
-        let url = Constant.TOKEN_URL + token.id
+        let url = Constant.TOKENS_URL + "/" + token.id
         
         Alamofire.request(.DELETE, url)
             .validate(statusCode: 200..<300)
@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController, ProfileEditViewDelegate {
         super.viewDidLoad()
         
         let token = realm.objects(Token).first!
-        let url = Constant.USER_URL + token.userID
+        let url = Constant.USERS_URL + "/" + token.userID
         
         Alamofire.request(.GET, url, headers: [
             "Authorization": "Bearer " + token.id
