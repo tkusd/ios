@@ -13,9 +13,8 @@ import AlamofireObjectMapper
 
 class ProjectTableViewController: UITableViewController {
     var projectList: [ProjectResponse] = []
-    var selectedProjectID: String?
     let realm = Realm()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +24,7 @@ class ProjectTableViewController: UITableViewController {
         
         Alamofire.request(.GET, url, headers: [
             "Authorization": "Bearer " + token.first!.id
-        ])
+            ])
             .validate(statusCode: 200..<300)
             .responseObject { ( res: ProjectListResponse?, err: NSError?) in
                 if err != nil {
@@ -38,19 +37,10 @@ class ProjectTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        self.navigationController?.navigationBar.topItem!.title = self.title
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projectList.count
     }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         
@@ -60,11 +50,11 @@ class ProjectTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "ProjectPreviewSegue") {
+        if segue.identifier == "ProjectPreviewSegue" {
             let viewController = segue.destinationViewController as! ProjectPreviewViewController
             let row = tableView.indexPathForSelectedRow()?.row
             viewController.projectID = projectList[row!].id
-            
+            viewController.hidesBottomBarWhenPushed = true
         }
     }
 }

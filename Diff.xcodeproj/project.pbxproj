@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333F14121B9F1216007E9D87 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F14111B9F1216007E9D87 /* SettingsTableViewController.swift */; };
+		333F14161B9F34DF007E9D87 /* ProfileEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F14151B9F34DF007E9D87 /* ProfileEditTableViewController.swift */; };
+		333F14191B9F56F4007E9D87 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F14181B9F56F4007E9D87 /* ResetPasswordViewController.swift */; };
 		3382772D1B7A0A0900986831 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382772C1B7A0A0900986831 /* SignupViewController.swift */; };
 		3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382772E1B7A0AB300986831 /* UserResponse.swift */; };
 		338277311B7A0CAA00986831 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277301B7A0CAA00986831 /* LoginNavigationController.swift */; };
-		338277351B7A199500986831 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277341B7A199500986831 /* SettingsViewController.swift */; };
-		338277371B7A1AF900986831 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277361B7A1AF900986831 /* ProfileEditViewController.swift */; };
-		33EB66CE1B9DDF5000760DAB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33EB66CD1B9DDF5000760DAB /* Default-568h@2x.png */; };
 		33EB66D21B9DF01D00760DAB /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D11B9DF01D00760DAB /* LoginTextField.swift */; };
 		33EB66D41B9DF91C00760DAB /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D31B9DF91C00760DAB /* LoginButton.swift */; };
 		33EB66D61B9DFEAA00760DAB /* UIButton+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */; };
@@ -43,14 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		333F14111B9F1216007E9D87 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		333F14151B9F34DF007E9D87 /* ProfileEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditTableViewController.swift; sourceTree = "<group>"; };
+		333F14171B9F40C2007E9D87 /* Diff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Diff-Bridging-Header.h"; sourceTree = "<group>"; };
+		333F14181B9F56F4007E9D87 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		3382772C1B7A0A0900986831 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		3382772E1B7A0AB300986831 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		338277301B7A0CAA00986831 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
-		338277341B7A199500986831 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		338277361B7A1AF900986831 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		338277381B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		338277391B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		33EB66CD1B9DDF5000760DAB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		33EB66D11B9DF01D00760DAB /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		33EB66D31B9DF91C00760DAB /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BGColor.swift"; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		33ED217F1B789138002E3711 = {
 			isa = PBXGroup;
 			children = (
-				33EB66CD1B9DDF5000760DAB /* Default-568h@2x.png */,
 				33ED218A1B789139002E3711 /* Diff */,
 				33ED21891B789139002E3711 /* Products */,
 				DA93895F0D2DC3CBFDEF3A5B /* Pods */,
@@ -124,17 +124,19 @@
 				33ED21961B789139002E3711 /* LaunchScreen.xib */,
 				33EB66D31B9DF91C00760DAB /* LoginButton.swift */,
 				338277301B7A0CAA00986831 /* LoginNavigationController.swift */,
-				33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */,
 				33EB66D11B9DF01D00760DAB /* LoginTextField.swift */,
+				333F14171B9F40C2007E9D87 /* Diff-Bridging-Header.h */,
 				33ED21B51B78A7BB002E3711 /* LoginViewController.swift */,
 				33ED21911B789139002E3711 /* Main.storyboard */,
 				33ED21C11B78F913002E3711 /* model */,
-				338277361B7A1AF900986831 /* ProfileEditViewController.swift */,
+				333F14151B9F34DF007E9D87 /* ProfileEditTableViewController.swift */,
 				33ED21CE1B7A0251002E3711 /* ProjectPreviewViewController.swift */,
+				333F14181B9F56F4007E9D87 /* ResetPasswordViewController.swift */,
 				33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */,
-				338277341B7A199500986831 /* SettingsViewController.swift */,
+				333F14111B9F1216007E9D87 /* SettingsTableViewController.swift */,
 				3382772C1B7A0A0900986831 /* SignupViewController.swift */,
 				33ED218B1B789139002E3711 /* Supporting Files */,
+				33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */,
 			);
 			name = Diff;
 			path = DIff;
@@ -264,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33ED21931B789139002E3711 /* Main.storyboard in Resources */,
-				33EB66CE1B9DDF5000760DAB /* Default-568h@2x.png in Resources */,
 				33ED21981B789139002E3711 /* LaunchScreen.xib in Resources */,
 				33ED21951B789139002E3711 /* Images.xcassets in Resources */,
 			);
@@ -334,20 +335,21 @@
 			files = (
 				33ED21C71B790581002E3711 /* APIResponse.swift in Sources */,
 				33EB66D21B9DF01D00760DAB /* LoginTextField.swift in Sources */,
-				338277371B7A1AF900986831 /* ProfileEditViewController.swift in Sources */,
 				3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */,
 				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
 				33ED21CF1B7A0251002E3711 /* ProjectPreviewViewController.swift in Sources */,
 				33ED21CD1B79FED8002E3711 /* ProjectListResponse.swift in Sources */,
 				3382772D1B7A0A0900986831 /* SignupViewController.swift in Sources */,
-				338277351B7A199500986831 /* SettingsViewController.swift in Sources */,
+				333F14161B9F34DF007E9D87 /* ProfileEditTableViewController.swift in Sources */,
 				33ED21C31B78F92C002E3711 /* TokenResponse.swift in Sources */,
 				33ED21BE1B78F44B002E3711 /* ProjectTableViewController.swift in Sources */,
 				33ED21B21B78A1BA002E3711 /* Constant.swift in Sources */,
 				33ED21C91B790760002E3711 /* Token.swift in Sources */,
+				333F14191B9F56F4007E9D87 /* ResetPasswordViewController.swift in Sources */,
 				33EB66D61B9DFEAA00760DAB /* UIButton+BGColor.swift in Sources */,
 				33ED21CB1B79FE50002E3711 /* ProjectResponse.swift in Sources */,
+				333F14121B9F1216007E9D87 /* SettingsTableViewController.swift in Sources */,
 				33EB66D41B9DF91C00760DAB /* LoginButton.swift in Sources */,
 				338277311B7A0CAA00986831 /* LoginNavigationController.swift in Sources */,
 			);

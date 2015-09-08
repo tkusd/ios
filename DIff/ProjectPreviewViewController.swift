@@ -20,10 +20,9 @@ class ProjectPreviewViewController: UIViewController {
         let url = NSURL(string: String(format: Constant.PROJECT_PREVIEW_URL, projectID!))
         let req = NSURLRequest(URL: url!)
         
+        webView.frame = view.bounds
+        webView.scrollView.scrollEnabled = false
+        webView.scrollView.bounces = false
         webView.loadRequest(req)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }

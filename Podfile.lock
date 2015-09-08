@@ -12,6 +12,7 @@ PODS:
     - Realm (= 0.94.0)
   - SwiftForms (1.0)
   - SwiftValidator (2.1.1)
+  - XLForm (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 1.3)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - RealmSwift (~> 0.94)
   - SwiftForms
   - SwiftValidator (= 2.1.1)
+  - XLForm (= 3.0.2)
 
 SPEC CHECKSUMS:
   Alamofire: 220403a8d5840e0b4c946a6fbaf209dbca124282
@@ -31,5 +33,6 @@ SPEC CHECKSUMS:
   RealmSwift: 5efbbf1a5c179a7237e4d428594e41619fa167ba
   SwiftForms: b16bf2978e6eb6617bc9f438322a1daa6c3d2dbd
   SwiftValidator: 79936ea870f1dba8a0824763375375bb209fe30d
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
 COCOAPODS: 0.38.2
