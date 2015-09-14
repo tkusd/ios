@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftValidator
+import Alamofire
 
 class ResetPasswordViewController: UIViewController, ValidationDelegate, UITextFieldDelegate {
     let validator = Validator()
@@ -53,6 +54,20 @@ class ResetPasswordViewController: UIViewController, ValidationDelegate, UITextF
         if validator.errors.count > 0 {
             return
         }
+        
+        Alamofire.request(.POST, Constant.API_URL + "passwords/reset", parameters: [
+            "email": email.text]
+        )
+            .validate(statusCode: 200..<300)
+            .response {_, _, _, err in
+                if err != nil {
+                    println(err)
+                    return
+                }
+                
+                self.navigationController?.popViewControllerAnimated(true)
+                
+        }
     }
     
     func validationSuccessful() {
@@ -64,9 +79,5 @@ class ResetPasswordViewController: UIViewController, ValidationDelegate, UITextF
             let field = field_ as! LoginTextField
             field.error = error.errorMessage
         }
-    }
-    
-    func loginSuccess(res: TokenResponse?) {
-        //
     }
 }
