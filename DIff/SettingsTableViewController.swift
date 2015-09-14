@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController, ProfileEditDelegate {
         let url = Constant.USERS_URL + "/" + token.userID
         
         Alamofire.request(.GET, url, headers: [
-            "Authorization": "Bearer " + token.id
+            "Authorization": "Bearer " + token.secret
             ])
             .validate(statusCode: 200..<300)
             .responseObject {(res: UserResponse?, err: NSError?) in
@@ -82,7 +82,6 @@ class SettingsTableViewController: UITableViewController, ProfileEditDelegate {
         let url = Constant.TOKENS_URL + "/" + token.id
         
         Alamofire.request(.DELETE, url)
-            .validate(statusCode: 200..<300)
             .response {_, _, _, err in
                 if err != nil {
                     println(err)

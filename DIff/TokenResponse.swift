@@ -12,6 +12,7 @@ import ObjectMapper
 class TokenResponse: APIResponse {
     var id: String?
     var userID: String?
+    var secret: String?
     var createdAt: NSDate?
     var updatedAt: NSDate?
     
@@ -24,6 +25,7 @@ class TokenResponse: APIResponse {
         
         id <- map["id"]
         userID <- map["user_id"]
+        secret <- map["secret"]
         createdAt <- (map["created_at"], ISO8601DateTransform())
         updatedAt <- (map["updated_at"], ISO8601DateTransform())
     }

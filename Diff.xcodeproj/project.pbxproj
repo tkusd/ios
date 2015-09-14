@@ -13,6 +13,7 @@
 		3382772D1B7A0A0900986831 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382772C1B7A0A0900986831 /* SignupViewController.swift */; };
 		3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3382772E1B7A0AB300986831 /* UserResponse.swift */; };
 		338277311B7A0CAA00986831 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338277301B7A0CAA00986831 /* LoginNavigationController.swift */; };
+		33BA21281BA654960035A472 /* QRCodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BA21271BA654960035A472 /* QRCodeScanViewController.swift */; };
 		33EB66D21B9DF01D00760DAB /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D11B9DF01D00760DAB /* LoginTextField.swift */; };
 		33EB66D41B9DF91C00760DAB /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D31B9DF91C00760DAB /* LoginButton.swift */; };
 		33EB66D61B9DFEAA00760DAB /* UIButton+BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */; };
@@ -52,6 +53,7 @@
 		338277301B7A0CAA00986831 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		338277381B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		338277391B7A398400986831 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		33BA21271BA654960035A472 /* QRCodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanViewController.swift; sourceTree = "<group>"; };
 		33EB66D11B9DF01D00760DAB /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		33EB66D31B9DF91C00760DAB /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		33EB66D51B9DFEAA00760DAB /* UIButton+BGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+BGColor.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				33ED21C11B78F913002E3711 /* model */,
 				333F14151B9F34DF007E9D87 /* ProfileEditTableViewController.swift */,
 				33ED21CE1B7A0251002E3711 /* ProjectPreviewViewController.swift */,
+				33BA21271BA654960035A472 /* QRCodeScanViewController.swift */,
 				333F14181B9F56F4007E9D87 /* ResetPasswordViewController.swift */,
 				33ED21BD1B78F44B002E3711 /* ProjectTableViewController.swift */,
 				333F14111B9F1216007E9D87 /* SettingsTableViewController.swift */,
@@ -336,6 +339,7 @@
 				33ED21C71B790581002E3711 /* APIResponse.swift in Sources */,
 				33EB66D21B9DF01D00760DAB /* LoginTextField.swift in Sources */,
 				3382772F1B7A0AB300986831 /* UserResponse.swift in Sources */,
+				33BA21281BA654960035A472 /* QRCodeScanViewController.swift in Sources */,
 				33ED21B61B78A7BB002E3711 /* LoginViewController.swift in Sources */,
 				33ED218E1B789139002E3711 /* AppDelegate.swift in Sources */,
 				33ED21CF1B7A0251002E3711 /* ProjectPreviewViewController.swift in Sources */,

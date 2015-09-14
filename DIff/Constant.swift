@@ -15,7 +15,7 @@ struct Constant {
     static let USERS_URL = API_URL + "users"
     static let USER_PROJECT_URL = USERS_URL + "/%@/projects"
     static let PROJECT_URL = API_URL + "/projects"
-    static let PROJECT_PREVIEW_URL = BASE_URL + "projects/%@/preview"
+    static let PROJECT_PREVIEW_URL = BASE_URL + "projects/%@/embed"
     
     static let DEFAULTS_TOKEN = "token"
     static let DEFAULTS_USER_ID = "user_id"

@@ -34,6 +34,7 @@ class LoginNavigationController: UINavigationController {
                 let token = Token()
                 token.id = res!.id!
                 token.userID = res!.userID!
+                token.secret = res!.secret!
                 token.createdAt = res!.createdAt!
                 token.updatedAt = res!.updatedAt!
                 

@@ -14,7 +14,7 @@ import AlamofireObjectMapper
 class ProjectTableViewController: UITableViewController {
     var projectList: [ProjectResponse] = []
     let realm = Realm()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

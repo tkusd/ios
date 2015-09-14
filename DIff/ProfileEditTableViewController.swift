@@ -92,7 +92,7 @@ class ProfileEditTableViewController: XLFormViewController {
         }
         
         Alamofire.request(.PUT, Constant.USERS_URL + "/" + token.userID, parameters: values as? [String: AnyObject], headers: [
-            "Authorization": "Bearer " + token.id
+            "Authorization": "Bearer " + token.secret
             ])
             .validate(statusCode: 200..<300)
             .responseObject {(res: UserResponse?, err: NSError?) in
@@ -120,7 +120,27 @@ class ProfileEditTableViewController: XLFormViewController {
     }
     
     func deleteUser(){
-        //
+        let token = realm.objects(Token).first!
+        
+        Alamofire.request(.DELETE, Constant.USERS_URL + "/" + token.userID, headers: [
+            "Authorization": "Bearer " + token.secret
+            ])
+            .response {_, _, _, err in
+                if err != nil {
+                    println(err)
+                    return
+                }
+                
+                // Delete all objects in Realm
+                self.realm.write {
+                    self.realm.deleteAll()
+                }
+                
+                // Go to the login page
+                let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                delegate.showLoginScreen(true)
+        }
     }
 }
 

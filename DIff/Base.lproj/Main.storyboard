@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dl0-t2-ee2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -337,10 +338,29 @@
             </objects>
             <point key="canvasLocation" x="1567" y="1021"/>
         </scene>
+        <!--Code Reader View Controller-->
+        <scene sceneID="3aT-Xi-oHF">
+            <objects>
+                <viewController id="4VS-OC-0hF" customClass="QRCodeReaderViewController" customModule="QRCodeReader" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ppx-xn-Jat"/>
+                        <viewControllerLayoutGuide type="bottom" id="SDb-Hn-olG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HKK-2e-i3m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSQ-Dr-qU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272.5" y="349"/>
+        </scene>
         <!--Preview-->
         <scene sceneID="w2R-8r-wTn">
             <objects>
-                <viewController title="Preview" id="hpm-JY-8C4" customClass="ProjectPreviewViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectPreviewViewController" title="Preview" id="hpm-JY-8C4" customClass="ProjectPreviewViewController" customModule="Diff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4JY-7h-n8T"/>
                         <viewControllerLayoutGuide type="bottom" id="eCf-0a-l8g"/>

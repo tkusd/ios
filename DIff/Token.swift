@@ -12,6 +12,7 @@ import RealmSwift
 class Token: Object {
     dynamic var id = ""
     dynamic var userID = ""
+    dynamic var secret = ""
     dynamic var createdAt = NSDate(timeIntervalSince1970: 1)
     dynamic var updatedAt = NSDate(timeIntervalSince1970: 1)
 }
